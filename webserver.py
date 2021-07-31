@@ -84,7 +84,7 @@ class DirectoryHandler(SimpleHTTPRequestHandler):
             list = os.listdir(path)
             all_entries = len(list)
         except os.error:
-            self.send_error(404, "No permission to list directory")
+            self.send_error(403, "No permission to list directory")
             return None
 
         if web_list_by_datetime:
