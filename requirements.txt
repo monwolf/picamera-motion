@@ -1,1 +1,3 @@
 picamera
+picamera[array]
+requests
