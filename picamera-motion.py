@@ -136,7 +136,7 @@ def save_image(image_path):
         camera.hflip = imageHFlip
         camera.exposure_mode = 'auto'
         camera.awb_mode = 'auto'
-        time.sleep(1)
+        time.sleep(0.5)
         camera.capture(image_path)
         camera.close()
 
@@ -193,7 +193,7 @@ def do_motion_detection():
         logging.info("File Naming by Date Time Sequence")
     while True:
         x_pos, y_pos = scan_motion()
-        file_name = save_image(imagePath, imageNamePrefix, current_count)
+        file_name = get_file_name(imagePath, imageNamePrefix, current_count)
 
         save_image(file_name)
         image_fname = os.path.basename(file_name)

@@ -31,7 +31,7 @@ class MSTeamsNontifier:
             ]
         }
         logging.error(json.dumps(schema))
-        res = requests.post(self._config["teams_webhook_url"], json=schema)
+        res = requests.post(self._config["webhook_url"], json=schema)
         
         if res.content != b'1':
             logging.error("Status Code: {}, Response {}".format(
